@@ -1,11 +1,12 @@
-.notfound {
+.list {
+  height: 100%;
   display: grid;
   place-content: center;
   font-weight: 700;
   font-size: 2rem;
 }
 
-.notfound div {
+.list div {
   display: flex;
   align-items: center;
 }

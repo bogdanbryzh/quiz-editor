@@ -1,7 +1,7 @@
 .version {
   font-size: 12px;
   font-weight: 900;
-  position: absolute;
+  position: fixed;
   bottom: 2em;
   right: clamp(1em, 6%, 5em);
 }
@@ -9,6 +9,8 @@
 .editor {
   display: grid;
   grid-template-columns: auto 1fr;
+  /* grid-template-rows: 1fr; */
+  align-items: start;
   gap: clamp(1em, 6%, 3em);
   height: 100%;
   padding: 2em clamp(1em, 6%, 5em);

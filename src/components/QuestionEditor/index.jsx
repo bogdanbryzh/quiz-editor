@@ -11,6 +11,7 @@ const QuestionEditor = ({ update }) => {
     { answer: '', correct: true },
   ]);
   const [question, setQuestion] = useState('');
+  const [saveBtn, setSaveBtn] = useState('save');
 
   const handleQuestionChange = e => {
     const { value } = e.target;
@@ -56,6 +57,7 @@ const QuestionEditor = ({ update }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    setSaveBtn('saving');
 
     const list = [...answersList];
 
@@ -70,6 +72,7 @@ const QuestionEditor = ({ update }) => {
         .then(resp => {
           update(true);
           setQuestion('');
+          setSaveBtn('save');
           setAnswersList([{ answer: '', correct: true }]);
         })
         .catch(console.error);
@@ -120,7 +123,10 @@ const QuestionEditor = ({ update }) => {
                   size='1.5em'
                   color='#ffffff'
                   onClick={handleAddClick}
-                  onKeyPress={handleAddClick}
+                  onKeyPress={e => {
+                    e.preventDefault();
+                    handleAddClick(e);
+                  }}
                 />
               )}
               {answersList.length !== 1 && (
@@ -130,14 +136,21 @@ const QuestionEditor = ({ update }) => {
                   size='1.5em'
                   color='#ffffff'
                   onClick={() => handleRemoveClick(i)}
-                  onKeyPress={() => handleRemoveClick(i)}
+                  onKeyPress={e => {
+                    e.preventDefault();
+                    handleRemoveClick(i);
+                  }}
                 />
               )}
             </div>
           </div>
         );
       })}
-      <input type='submit' value='save' />
+      <input
+        type='submit'
+        value={saveBtn}
+        disabled={saveBtn === 'saving' ? true : false}
+      />
     </form>
   );
 };

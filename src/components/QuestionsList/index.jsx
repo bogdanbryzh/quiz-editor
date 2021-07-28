@@ -5,7 +5,7 @@ import { QuestionCard } from '../QuestionCard';
 
 const QuestionsList = ({ questions }) => {
   return (
-    <div>
+    <div className={styles.list}>
       {Array.isArray(questions) && questions.length > 0 ? (
         questions.map(question => {
           return <QuestionCard key={question._id} question={question} />;

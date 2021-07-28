@@ -1,4 +1,5 @@
 .new {
+  min-width: 450px;
   padding: 1em clamp(1em, 6%, 3em);
   background-color: var(--secondary-color);
   color: var(--main-color);
@@ -8,8 +9,22 @@
   align-items: flex-start;
 }
 
-.new input {
-  border: 2px solid transparent;
+.newanswer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.newanswer > * {
+  margin: 5px;
+}
+
+.newanswer > *:first-child {
+  margin-left: 0;
+}
+
+.newanswer > *:last-child {
+  margin-right: 0;
 }
 
 .new input:focus,
@@ -17,13 +32,22 @@
   outline: none;
 }
 
+.new input {
+  border: none;
+}
+
 .new input:focus,
 .new input:focus-visible {
-  border: 2px dashed #17cc23;
+  outline: 2px dashed #17cc23;
+}
+
+.new input[type='radio']:focus,
+.new input[type='radio']:focus-visible {
+  outline: 2px dashed #17cc23;
 }
 
 .new input[type='text'] {
-  width: 300px;
+  width: 100%;
   background-color: inherit;
   padding: 10px;
   color: inherit;
@@ -33,6 +57,7 @@
 
 .new input[name='question'] {
   width: 100%;
+  max-width: 100%;
   margin: 10px 0;
 }
 
@@ -52,21 +77,10 @@
   font-weight: 700;
 }
 
-.newanswer {
-  display: flex;
-  align-items: center;
-}
-
-.newanswer > * {
-  margin: 5px;
-}
-
-.newanswer > *:first-child {
-  margin-left: 0;
-}
-
-.newanswer > *:last-child {
-  margin-right: 0;
+input[type='submit']:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+  outline: none;
 }
 
 .answercontrols {
@@ -87,5 +101,5 @@
 .answercontrols .add:focus-visible,
 .answercontrols .remove:focus,
 .answercontrols .remove:focus-visible {
-  border: 3px dashed #17cc23;
+  outline: 3px dashed #17cc23;
 }
