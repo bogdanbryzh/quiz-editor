@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+code,
+pre {
+  font-family: monospace;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#root {
+  --main-color: #137b85;
+  --main-color-light: #89bdc2;
+  --secondary-color: #f1f1e1;
+  height: 100%;
+  font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+  font-weight: 300;
+  font-size: 18px;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+}

@@ -1,0 +1,11 @@
+.notfound {
+  display: grid;
+  place-content: center;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.notfound div {
+  display: flex;
+  align-items: center;
+}

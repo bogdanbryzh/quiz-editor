@@ -1,0 +1,91 @@
+.new {
+  padding: 1em clamp(1em, 6%, 3em);
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.new input {
+  border: 2px solid transparent;
+}
+
+.new input:focus,
+.new input:focus-visible {
+  outline: none;
+}
+
+.new input:focus,
+.new input:focus-visible {
+  border: 2px dashed #17cc23;
+}
+
+.new input[type='text'] {
+  width: 300px;
+  background-color: inherit;
+  padding: 10px;
+  color: inherit;
+  font-weight: 700;
+  border-bottom: 2px solid var(--main-color-light);
+}
+
+.new input[name='question'] {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.new input[type='text']:focus,
+.new input[type='text']:focus-visible {
+  border-bottom: 2px solid var(--main-color);
+}
+
+.new input[type='submit'] {
+  width: 100%;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  padding: 15px;
+  margin-top: 2em;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.newanswer {
+  display: flex;
+  align-items: center;
+}
+
+.newanswer > * {
+  margin: 5px;
+}
+
+.newanswer > *:first-child {
+  margin-left: 0;
+}
+
+.newanswer > *:last-child {
+  margin-right: 0;
+}
+
+.answercontrols {
+  display: flex;
+}
+
+.answercontrols .add {
+  background-color: #acd1af;
+  margin-left: 10px;
+}
+
+.answercontrols .remove {
+  background-color: #f47174;
+  margin-left: 10px;
+}
+
+.answercontrols .add:focus,
+.answercontrols .add:focus-visible,
+.answercontrols .remove:focus,
+.answercontrols .remove:focus-visible {
+  border: 3px dashed #17cc23;
+}

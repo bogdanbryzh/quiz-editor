@@ -1,0 +1,44 @@
+.version {
+  font-size: 12px;
+  font-weight: 900;
+  position: absolute;
+  bottom: 2em;
+  right: clamp(1em, 6%, 5em);
+}
+
+.editor {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(1em, 6%, 3em);
+  height: 100%;
+  padding: 2em clamp(1em, 6%, 5em);
+}
+
+.loader {
+  display: grid;
+  height: 100%;
+  place-content: center;
+  background-color: #137b85;
+}
+
+.loading {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
