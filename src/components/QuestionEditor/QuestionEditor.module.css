@@ -107,6 +107,7 @@ input[type='submit']:disabled {
 
 .answercontrols {
   display: flex;
+  align-items: center;
 }
 
 .answercontrols .add {
