@@ -1,12 +1,16 @@
 .list {
   height: 100%;
+}
+
+.notfound {
+  height: calc(100vh - 60px);
   display: grid;
   place-content: center;
   font-weight: 700;
   font-size: 2rem;
 }
 
-.list div {
+.notfound div {
   display: flex;
   align-items: center;
 }

@@ -26,7 +26,8 @@ const Editor = ({ questions, update }) => {
     >
       <div className={styles.editor}>
         <QuestionEditor update={update} />
-        <QuestionsList questions={questions} />
+        <div style={{ minWidth: '400px' }}></div>
+        <QuestionsList questions={questions} update={update} />
       </div>
     </Protect>
   );

@@ -1,16 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const AnswersList = ({ answers }) => {
-  return answers
-    ? answers.map(answer => {
+import styles from './AnswersList.module.css';
+
+const Answer = ({ answer, editable, update }) => {
+  const [answerText, setAnswerText] = useState(answer.answer);
+  const answerId = answer._id;
+
+  return (
+    <p
+      className={styles.answer}
+      data-correct={answer.correct}
+      key={answerId}
+      contentEditable={editable}
+      suppressContentEditableWarning={true}
+      onBlur={e => {
+        setAnswerText(e.target.textContent);
+        update(answerId, e.target.textContent);
+      }}
+    >
+      {answerText}
+    </p>
+  );
+};
+
+const AnswersList = ({ answers, editable, update }) => {
+  return answers ? (
+    <div className={styles.answers}>
+      {answers.map(answer => {
         return (
-          <p key={answer._id}>
-            {answer.answer}
-            <span>{answer.correct === true ? '(*)' : null}</span>
-          </p>
+          <Answer
+            editable={editable}
+            answer={answer}
+            update={update}
+            key={answer._id}
+          />
         );
-      })
-    : null;
+      })}
+    </div>
+  ) : null;
 };
 
 export { AnswersList };

@@ -1,0 +1,26 @@
+.answers {
+  margin-left: 10px;
+}
+
+.answer {
+  padding: 5px;
+  width: max-content;
+  min-width: 200px;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+
+.answer[contenteditable='true'] {
+  border-bottom: 2px solid var(--main-color-light);
+  margin-bottom: 0;
+}
+
+.answer[contenteditable='true']:focus,
+.answer[contenteditable='true']:focus-visible {
+  outline: none;
+  border-bottom: 2px solid var(--main-color);
+}
+
+.answer[data-correct='true'] {
+  font-weight: 700;
+}

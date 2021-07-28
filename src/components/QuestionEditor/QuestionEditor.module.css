@@ -1,6 +1,7 @@
 .new {
-  min-width: 450px;
-  padding: 1em clamp(1em, 6%, 3em);
+  position: fixed;
+  min-width: 400px;
+  padding: 20px clamp(1em, 6%, 3em);
   background-color: var(--secondary-color);
   color: var(--main-color);
   display: flex;
@@ -33,6 +34,7 @@
 }
 
 .new input {
+  font-size: inherit;
   border: none;
 }
 
@@ -66,12 +68,32 @@
   border-bottom: 2px solid var(--main-color);
 }
 
+.buttons {
+  margin-top: 2em;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.clear {
+  width: 100%;
+  background-color: inherit;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  color: var(--main-color-light);
+}
+
+.clear[data-active='true'] {
+  color: var(--main-color);
+}
+
 .new input[type='submit'] {
   width: 100%;
   background-color: var(--main-color);
   color: var(--secondary-color);
   padding: 15px;
-  margin-top: 2em;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 700;

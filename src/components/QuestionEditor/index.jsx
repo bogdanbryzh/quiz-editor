@@ -81,9 +81,15 @@ const QuestionEditor = ({ update }) => {
     }
   };
 
+  const handleClear = e => {
+    e.preventDefault()
+    setQuestion('');
+    setAnswersList([{ answer: '', correct: true }]);
+  };
+
   return (
     <form className={styles.new} onSubmit={handleSubmit}>
-      <h4>New question</h4>
+      <h3>New question</h3>
       <input
         type='text'
         required={true}
@@ -146,11 +152,24 @@ const QuestionEditor = ({ update }) => {
           </div>
         );
       })}
-      <input
-        type='submit'
-        value={saveBtn}
-        disabled={saveBtn === 'saving' ? true : false}
-      />
+      <div className={styles.buttons}>
+        <p
+          className={styles.clear}
+          data-active={
+            question || answersList.length > 1 || answersList[0].answer !== ''
+              ? 'true'
+              : 'false'
+          }
+          onClick={handleClear}
+        >
+          clear
+        </p>
+        <input
+          type='submit'
+          value={saveBtn}
+          disabled={saveBtn === 'saving' ? true : false}
+        />
+      </div>
     </form>
   );
 };
