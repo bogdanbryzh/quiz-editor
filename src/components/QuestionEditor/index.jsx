@@ -76,8 +76,6 @@ const QuestionEditor = ({ update }) => {
           setAnswersList([{ answer: '', correct: true }]);
         })
         .catch(console.error);
-
-      console.log(JSON.stringify(response));
     }
   };
 
@@ -117,7 +115,6 @@ const QuestionEditor = ({ update }) => {
                 id={`correct${i}`}
                 checked={x.correct}
                 onChange={() => {
-                  console.log(i);
                   handleRadioChange(i);
                 }}
               />

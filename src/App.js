@@ -45,8 +45,7 @@ function App() {
       .then(version => {
         setQuestionsVersion(version.data.version);
       })
-      .catch(console.error)
-      .finally(console.log);
+      .catch(console.error);
     axios
       .get(`${URI}/questions`)
       .then(questions => {
@@ -59,8 +58,7 @@ function App() {
           return setLoading(false);
         }
         console.error(error);
-      })
-      .finally(console.log);
+      });
   }, []);
 
   useEffect(() => {
@@ -69,8 +67,7 @@ function App() {
       .then(version => {
         setQuestionsVersion(version.data.version);
       })
-      .catch(console.error)
-      .finally(console.log);
+      .catch(console.error);
     updateQuestions &&
       axios
         .get(`${URI}/questions`)
